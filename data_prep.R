@@ -1,3 +1,30 @@
+"
+Author: Joe Tuccillo
+
+Description: Assembles raw ACS input data by source dataset into an R dataframe
+  of input variables for cluster analysis. 
+
+Inputs: 
+
+  1. 'data/blockgroup_all_combined_ests.csv': Combined ACS 5-Year Estimates (2014) at the
+    block-group level for selected datasets..
+
+  2. 'data/data_dict_ACS5Y2014.csv': data dictionary for selected ACS 
+    datasets.
+
+Outputs: RData file 'Suffolk_USGS_Inputs.RData', which contains: 
+
+  1. 'inVars.prop': a dataframe of input variables for cluster analysis,
+    combined from ACS estimates. Variables are represented as proportions
+    of the total populations of their source datasets. 
+  
+  2. 'inVars.raw': a supplementary list of dataframes sorted by source ACS dataset.
+    Each dataframe features the total population of the source dataset and raw
+    counts of variables comprising 'inVars.prop'. Used for clustering 
+    diagnostics (i.e. Gini index).
+
+"
+
 ####Setup####
 
 inVars<-read.csv("data/blockgroup_all_combined_ests.csv",stringsAsFactors = F)
@@ -6,7 +33,7 @@ data.dict<-read.csv("data/data_dict_ACS5Y2014.csv",stringsAsFactors = F)
 #Exclude SE's (for now)
 inVars<-inVars[,!grepl("SE_",names(inVars))]
 
-#Make variable names human-readable
+#Make variable names human-readable using data dictionary
 names(inVars)[-1]<-substr(names(inVars)[-1],1,(nchar(names(inVars)[-1])-1)) #remove trailing character from var names
 names(inVars)[2:length(inVars)]<-sapply(X=names(inVars)[2:length(inVars)],FUN=function(X){ X<-data.dict[data.dict$Variable==X,]$Name })
 
