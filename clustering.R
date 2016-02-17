@@ -6,7 +6,7 @@ Description:
   Cluster Analysis and Diagnostics.
 
   1. Generates a block-group level cluster solution for Suffolk County, NY
-  using prepared ACS Data (see 'data_prep.R'). Workflow:
+  using prepared ACS and NLCD Data (see 'data_prep.R'). Workflow:
     a) Standardize input variables (z-score).
     b) Reduce dimensionality of input variables by converting them into leading 
        principal component scores (Principal Components Analysis and Kaiser
@@ -28,7 +28,7 @@ Inputs:
      are represented as proportions of the total populations of their source
      datasets. (Generated when 'data_prep.R' is sourced).
 
-  2. 'data/tl_2014_36_bg.shp': Suffolk County, NY block group boundaries.
+  2. 'data/tl_2014_36_bg.shp': NY State block group boundaries.
 
   3. 'data/hazard_extent_Suffolk_wgs.shp': Cat 1-4 hazard zone boundaries.
 
@@ -40,16 +40,16 @@ Outputs:
 
   2. 'sufMap': a map of cluster membership for Suffolk County (ggplot2 object). 
 
-  3. 'hazMap' (forthcoming): a map of cluster membership within the Cat 1-4 hazard
+  3. 'hazMap' (TO DO): a map of cluster membership within the Cat 1-4 hazard
       zone (ggplot2 object).
 
-  3. 'sufProfile': average profile heatmap of cluster groups by input variable (ggplot2 
+  4. 'sufProfile': average profile heatmap of cluster groups by input variable (ggplot2 
       object). Plot numbers correspond to the percentage difference in the means of each 
       variable between each cluster group and the overall mean. For example, if Group 1
       features a score of 200 for Variable A, this indicates that the mean percentage of 
       Variable A among all Group 1 members is 200% greater than the overall average.
 
-  4. Communities by cluster membership (currently runs standalone in R, but can generate
+  5. Communities by cluster membership (currently runs standalone in R, but can generate
       an output as needed).
 
 "
@@ -69,6 +69,9 @@ bgs<-bgs[grepl("g36103",bgs$GEOID),] #subset by Suffolk County
 ##Load hazard zone
 # hazzn<-readShapePoly("data/hazard_extent_Suffolk.shp")
 hazzn<-readShapePoly("data/hazard_extent_Suffolk_wgs.shp")
+
+##Remove observations with no land area
+inVars.prop<-inVars.prop[!inVars.prop$GEOID %in% bgs[bgs$ALAND==0,]$GEOID,]
 
 ####Clustering####
 
