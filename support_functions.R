@@ -46,7 +46,17 @@ toprop<-function(inData){
     
   "
   
-  return(data.frame(GEOID=inData$GEOID,sapply(X=inData[,-c(1:2)],FUN=function(X){X/inData$TOTAL}))) 
+  if(ncol(inData)>3){
+    
+    return(data.frame(GEOID=inData$GEOID,sapply(X=inData[,-c(1:2)],FUN=function(X){X/inData[,2]}))) 
+    
+  }else{ #safeguard if only one value field in addition to 'GEOID' and 'TOTAL'
+    
+    prop.out<-data.frame(GEOID=inData$GEOID)
+    prop.out[[names(inData)[3]]]<-inData[,3]/inData[,2]
+    return(prop.out)
+    
+  }
   
 }
 
