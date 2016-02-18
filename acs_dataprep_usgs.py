@@ -1,3 +1,9 @@
+# Authors: Rebecca Davies & David Folch
+# Date: 2/17/16
+# Description: Script to download select American Community Survey data from the Census API
+# Output: Produces four csv files for each run: variable estimates (ests.csv), MOEs (moes.csv), column names (columns.csv), and list of block groups containing zero households (empty.csv)
+
+# Cenpy library: https://github.com/ljwolf/cenpy/tree/master/cenpy
 import cenpy as cen
 import pandas as pd
 import numpy as np
@@ -6,13 +12,10 @@ import copy
 local_path = '/Users/Becky/'
 data_path = local_path + 'documents/suffolk_USGS/data/'
 
-# Using cenpy library to connect to census API
-# Reference: https://github.com/ljwolf/cenpy/tree/master/cenpy
 # Data source: 20010-2014 ACS 5-yr. Summary Files
 conn = cen.base.Connection('ACSSF5Y2014')
 
-# Download ACS data from API by specified variable category or "all"
-# Produces four separate csv files for each run: variable estimates, MOEs, column names, and list of block groups containing zero households
+# Download ACS data from API by specified variable category e.g. "housing_yearbuilt" or "all"
 def get_data(scenario):
     # Housing Age variables
     if scenario == 'housing_yearbuilt':
@@ -37,12 +40,12 @@ def get_data(scenario):
         cols = ['B25075_001', 'B25075_002','B25075_003','B25075_004','B25075_005','B25075_006','B25075_007','B25075_008','B25075_009','B25075_010','B25075_011','B25075_012','B25075_013',
         'B25075_014','B25075_015','B25075_016','B25075_017','B25075_018','B25075_019','B25075_020','B25075_021','B25075_022','B25075_023','B25075_024','B25075_025']
     #all data at once 
-    #if scenario == 'all':
-    #    cols = ['B25034_001', 'B25034_010', 'B25034_009', 'B25034_008','B25034_007','B25034_006','B25034_005','B25034_004','B25034_003','B25034_002', 'B25024_001', 'B25024_002', 'B25024_003',
-    #    'B25024_004', 'B25024_005', 'B25024_006', 'B25024_007', 'B25024_008', 'B25024_009', 'B03002_001', 'B03002_003', 'B03002_004', 'B03002_012', 'B03002_006', 'B11001_001', 'B11001_003', 
-    #    'B11001_004', 'B11001_009', 'B11001_008','B25026_001', 'B25026_003', 'B25026_010','B25026_004','B25026_011','B25026_005','B25026_012','B25026_006','B25026_007','B25026_008','B25026_013',
-    #    'B25026_014','B25026_015', 'B25004_001', 'B25004_006', 'B25075_001', 'B25075_002', 'B25075_003','B25075_004','B25075_005','B25075_006','B25075_007','B25075_008','B25075_009','B25075_010',
-    #    'B25075_011','B25075_012','B25075_013', 'B25075_014','B25075_015','B25075_016','B25075_017','B25075_018','B25075_019','B25075_020','B25075_021','B25075_022','B25075_023','B25075_024','B25075_025']  
+    elif scenario == 'all':
+        cols = ['B25034_001', 'B25034_010', 'B25034_009', 'B25034_008','B25034_007','B25034_006','B25034_005','B25034_004','B25034_003','B25034_002', 'B25024_001', 'B25024_002', 'B25024_003',
+        'B25024_004', 'B25024_005', 'B25024_006', 'B25024_007', 'B25024_008', 'B25024_009', 'B03002_001', 'B03002_003', 'B03002_004', 'B03002_012', 'B03002_006', 'B11001_001', 'B11001_003', 
+        'B11001_004', 'B11001_009', 'B11001_008','B25026_001', 'B25026_003', 'B25026_010','B25026_004','B25026_011','B25026_005','B25026_012','B25026_006','B25026_007','B25026_008','B25026_013',
+        'B25026_014','B25026_015', 'B25004_001', 'B25004_006', 'B25075_001', 'B25075_002', 'B25075_003','B25075_004','B25075_005','B25075_006','B25075_007','B25075_008','B25075_009','B25075_010',
+        'B25075_011','B25075_012','B25075_013', 'B25075_014','B25075_015','B25075_016','B25075_017','B25075_018','B25075_019','B25075_020','B25075_021','B25075_022','B25075_023','B25075_024','B25075_025']  
     # Name of output file
     base_file_name = data_path+'blockgroup'+'_'+scenario
     # Retrieve estimates and margins of error (MOEs)
