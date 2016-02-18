@@ -1,7 +1,7 @@
 "
 Author: Joe Tuccillo
 
-Description: Assembles raw ACS input data by source dataset into an R dataframe
+Description: Assembles raw ACS and NLCD input data by source dataset into an R dataframe
   of input variables for cluster analysis. 
 
 Inputs: 
@@ -11,6 +11,11 @@ Inputs:
 
   2. 'data/data_dict_ACS5Y2014.csv': data dictionary for selected ACS 
     datasets.
+
+  3. 'data/NLCD_Suffolk_Grouped.RData': NLCD 2011 categories grouped for Suffolk County by 
+    blockgroup. These are generated from 'landcover_prep.R' (NOT RUN as the NLCD files are 
+    very large). 'landcover_prep.R' is included in this repository for reference (includes
+    NLCD 2011 download). 
 
 Outputs: RData file 'Suffolk_USGS_Inputs.RData', which contains: 
 
@@ -60,7 +65,15 @@ inVars.prop<-data.frame(GEOID=inVars$GEOID)
 
 ###Biophysical###
 
-###Housing Stock Age
+##Land Cover
+
+#Load NLCD 2011 categories grouped for Suffolk County by blockgroup
+# source("landcover_prep.R") #tabulate and group NLCD categories (not run)
+load("data/NLCD_Suffolk_Grouped.RData")
+inVars.raw$lc<-nlcd.tab #create list entry for 'inVars.raw'
+inVars.prop<-merge(inVars.prop,toprop(nlcd.tab),by="GEOID") #append to 'inVars.prop'
+
+##Housing Stock Age
 inVars.raw$hage<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,2]) #create list entry for 'inVars.raw'
 inVars.raw$hage$HS.1940.before<-inVars[,3] #1940 or before
 inVars.raw$hage$HS.Mid20th<-rowSums(inVars[,4:6],na.rm=T) #Mid-20th Century (1940-1970)
@@ -82,8 +95,6 @@ inVars.raw$hval$HV.200k.500k<-rowSums(inVars[,64:67],na.rm=T)
 inVars.raw$hval$HV.500k.greater<-rowSums(inVars[,68:70],na.rm=T)
 inVars.prop<-merge(inVars.prop,toprop(inVars.raw$hval),by="GEOID")
 
-##Land Cover
-##ADD ME!!
 
 ###SES###
 
@@ -110,7 +121,8 @@ inVars.prop<-merge(inVars.prop,toprop(inVars.raw$fam),by="GEOID")
 ##ADD ME!!
 
 ##Seasonal Homes
-##ADD ME!! - variable is there but need a total field
+inVars.raw$seasonal<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,44],Seasonal.Homes=inVars[,45])
+inVars.prop<-merge(inVars.prop,toprop(inVars.raw$seasonal),by="GEOID")
 
 ####Cleanup#####
 
@@ -132,6 +144,8 @@ for (empty in empty.list){
 inVars.prop<-inVars.prop[!inVars.prop$GEOID %in% empties,]
 inVars.raw<-sapply(X=inVars.raw,FUN=function(X){ X<-X[!X$GEOID %in% empties,] })
 
+###Reset NaN values to 0 (these get generated when var=0 and TOTAL=0)
+for(i in 2:ncol(inVars.prop)){ inVars.prop[,i][is.nan(inVars.prop[,i])]<-0 }
 
 ###Subset Data by Complete Cases###
 inVars.prop<-inVars.prop[complete.cases(inVars.prop),]

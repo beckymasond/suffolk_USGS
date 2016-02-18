@@ -1,0 +1,21 @@
+Value,Desc,Group
+11,Open Water,Coastal.Riparian
+12,Perennial Ice/Snow,999
+21,"Developed, Open Space",Dev.Low
+22,"Developed, Low Intensity",Dev.Low
+23,"Developed, Medium Intensity",Dev.Medium
+24,Developed High Intensity,Dev.High
+31,Barren Land,Coastal.Riparian
+41,Deciduous Forest,Forest
+42,Evergreen Forest,Forest
+43,Mixed Forest,Forest
+51,Dwarf Scrub,999
+52,Shrub/Scrub,Shrub.Scrub
+71,Grassland/Herbaceous,Grassland.Herbaceous
+72,Sedge/Herbaceous,999
+73,Lichens,999
+74,Moss,999
+81,Pasture/Hay,Planted.Cultivated
+82,Cultivated Crops,Planted.Cultivated
+90,Woody Wetlands,Wetlands
+95,Emergent Herbaceous Wetlands,Wetlands
