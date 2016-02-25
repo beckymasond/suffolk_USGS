@@ -28,19 +28,19 @@ B11001_003,Households: Household Type (Including Living Alone),Married-Couple Fa
 B11001_004,Households: Household Type (Including Living Alone),Other Family
 B11001_009,Households: Household Type (Including Living Alone),Householder Not Living Alone
 B11001_008,Households: Household Type (Including Living Alone),Householder Living Alone
-B25026_001,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit: Total Population in Occupied Housing Units
-B25026_003,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Owner Moved In 2010 or later
-B25026_010,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Renter Moved In 2010 or later
-B25026_004,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Owner Moved In 2000-2009
-B25026_011,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Renter Moved In 2000-2009
-B25026_005,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Owner Moved In 1990-1999
-B25026_012,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Renter Moved In 1990-1999
-B25026_006,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Owner Moved In 1980-1989
-B25026_007,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Owner Moved In 1970-1979
-B25026_008,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Owner Moved In 1969 or earlier
-B25026_013,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Renter Moved In 1980-1989
-B25026_014,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Renter Moved In 1970-1979
-B25026_015,Total population in occupied housing units: Total Population in Occupied Housing Units By Tenure By Year Householder Moved Into Unit,Renter Moved In 1969 or earlier
+B25038_001,Occupied housing units: Tenure By Year Householder Moved Into Unit,Occupied housing units: Tenure By Year Householder Moved Into Unit: Total
+B25038_003,Occupied housing units: Tenure By Year Householder Moved Into Unit,Owner Moved In 2010 or later
+B25038_010,Occupied housing units: Tenure By Year Householder Moved Into Unit,Renter Moved In 2010 or later
+B25038_004,Occupied housing units: Tenure By Year Householder Moved Into Unit,Owner Moved In 2000-2009
+B25038_011,Occupied housing units: Tenure By Year Householder Moved Into Unit,Renter Moved In 2000-2009
+B25038_005,Occupied housing units: Tenure By Year Householder Moved Into Unit,Owner Moved In 1990-1999
+B25038_012,Occupied housing units: Tenure By Year Householder Moved Into Unit,Renter Moved In 1990-1999
+B25038_006,Occupied housing units: Tenure By Year Householder Moved Into Unit,Owner Moved In 1980-1989
+B25038_007,Occupied housing units: Tenure By Year Householder Moved Into Unit,Owner Moved In 1970-1979
+B25038_008,Occupied housing units: Tenure By Year Householder Moved Into Unit,Owner Moved In 1969 or earlier
+B25038_013,Occupied housing units: Tenure By Year Householder Moved Into Unit,Renter Moved In 1980-1989
+B25038_014,Occupied housing units: Tenure By Year Householder Moved Into Unit,Renter Moved In 1970-1979
+B25038_015,Occupied housing units: Tenure By Year Householder Moved Into Unit,Renter Moved In 1969 or earlier
 B25004_001,Vacant housing units: Vacancy Status,Vacant housing units: Vacancy Status: Total
 B25004_006,Vacant housing units: Vacancy Status,"For Seasonal, Recreational, Or Occasional Use"
 B25075_001,Owner-occupied housing units: Value,Owner-occupied housing units: Value: Total
@@ -81,10 +81,11 @@ T007_010,Total population: Age,55 to 64 Years of Age
 T007_011,Total population: Age,65 to 74 Years of Age
 T007_012,Total population: Age,75 to 84 Years of Age
 T007_013,Total population: Age,85 Years of Age and Over
-T117_001,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level: Population for whom poverty status is determined
-T117_002,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Ratio of Income in 2014 to Poverty Level: Under 0.5
-T117_003,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Ratio Of Income in 2014 To Poverty Level: 0.5 - 0.74
-T117_004,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Ratio Of Income in 2014 To Poverty Level: 0.75 - 0.99
-T117_005,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Ratio Of Income in 2014 To Poverty Level: 1 - 1.49
-T117_006,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Ratio of Income in 2014 to Poverty Level: 1.50-1.99
-T117_007,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level,Ratio of Income in 2014 to Poverty Level: 2.00 and over
+C17002_001,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Population for whom poverty status is determined: Ratio of Income in 2014 to Poverty Level: Population for whom poverty status is determined
+C17002_002,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: Under .50
+C17002_003,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: .50 To .99
+C17002_004,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: 1.00 To 1.24
+C17002_005,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: 1.25 To 1.49
+C17002_006,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: 1.50 To 1.84
+C17002_007,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: 1.85 To 1.99
+C17002_008,Population for whom poverty status is determined: Ratio of Income to Poverty Level,Ratio of Income To Poverty Level In the Past 12 Months: 2.00 and Over
