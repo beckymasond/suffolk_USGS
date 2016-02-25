@@ -1,81 +1,82 @@
-Category,Sub-category,Category Code ,Source,Estimate,ACS 2012 5yr Variables,Universe,Universe Variable,ACS 2014 5yr Variable Equivalent,,,,,
-Housing Age,Housing Stock Built 1940 or Earlier,HS.1940.before,ACS 5-year 2008-2012,Housing stock built 1939 or earlier,ACS12_5yr_B25034010,Housing Units,ACS12_5yr_B25034001,Identical,,,,,
-,Housing Stock Built 1940s,HS.1940s,,Housing Stock built 1940-1949,ACS12_5yr_B25034009,,,Identical,,,,,
-,Housing Stock Built 1950s-1960s,HS.mid20th,,Housing stock built 1950-1959,ACS12_5yr_B25034008,,,Identical,,,,,
-,,HS.mid20th,,Housing stock built 1960-1969,ACS12_5yr_B25034007,,,Identical,,,,,
-,Housing Stock Built 1970s-1990s,HS.late20th,,Housing Stock built 1970-1979,ACS12_5yr_B25034006,,,Identical,,,,,
-,,HS.late20th,,Housing Stock built 1980-1990,ACS12_5yr_B25034005,,,Housing Stock built 1980-1989,,,,,
-,,HS.late20th,,Housing Stock built 1990-2000,ACS12_5yr_B25034004,,,Housing Stock built 1990-1999,,,,,
-,Housing Stock Built Since 2000,Hs.since2000,,Housing Stock built 2000-2004,ACS12_5yr_B25034003,,,Housing Stock built 2000-2009,,,,,
-,,Hs.since2000,,Housing Stock built 2010 or later,ACS12_5yr_B25034002,,,Identical,,,,,
-Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2008-2012,"Single-Unit, Attached",ACS12_5yr_B25024002,,,"Single-Unit, Detached",,,,,
-,,HU.SFR,,"Single-Unit, detached",ACS12_5yr_B25024003,,,"Single-Unit, Attached",,,,,
-,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,,2 Units,ACS12_5yr_B25024004,,,Identical,,,,,
-,,HU.MFR.sm,,3-4 Units,ACS12_5yr_B25024005,,,Identical,,,,,
-,,HU.MFR.sm,,5-9 Units,ACS12_5yr_B25024006,,,Identical,,,,,
-,Medium Multifamily Residential (10+ Units),HU.MFR.lg,,10-19 Units,ACS12_5yr_B25024007,,,Identical,,,,,
-,,HU.MFR.lg,,20-49 Units,ACS12_5yr_B25024008,,,Identical,,,,,
-,,HU.MFR.lg,,50 or More Units,ACS12_5yr_B25024009,,,Identical,,,,,
-Race,White,White,ACS 5-year 2008-2012,Not Hispanic Or Latino: White Alone,ACS12_5yr_B03002003,Total Population,ACS12_5yr_B03002001,Identical,,,,,
-,African-American,AfAm,,Not Hispanic Or Latino: Black or African American Alone,ACS12_5yr_B03002004,,,Identical,,,,,
-,Hispanic/Latino,HspLat,,Hispanic Or Latino,ACS12_5yr_B03002012,,,Identical,,,,,
-,Asian,Asian,,Not Hispanic Or Latino: Asian Alone,ACS12_5yr_B03002006,,,Identical,,,,,
-Age,Age 18 and Under,Age.18.Under,ACS 5-year 2008-2012 (Social Explorer),Under 5 Years of Age,            T007_002,Total Population,            T007_001,Identical,,,,,
-,,Age.18.Under,,5 to 9 Years of Age,            T007_003,,,Identical,,,,,
-,,Age.18.Under,,10 to 14 Years of Age,            T007_004,,,Identical,,,,,
-,,Age.18.Under,,15 to 17 Years of Age,            T007_005,,,Identical,,,,,
-,Age 18 to 34,Age.18.34,,18 to 24 Years of Age,            T007_006,,,Identical,,,,,
-,,Age.18.34,,25 to 34 Years of Age,            T007_007,,,Identical,,,,,
-,Age 35 to 65,Age.35.65,,35 to 44 Years of Age,            T007_008,,,Identical,,,,,
-,,Age.35.65,,45 to 54 Years of Age,            T007_009,,,Identical,,,,,
-,,Age.35.65,,55 to 64 Years of Age,            T007_010,,,Identical,,,,,
-,Age 65 and Over,Age.65.Over,,65 to 74 Years of Age,            T007_011,,,Identical,,,,,
-,,Age.65.Over,,75 to 84 Years of Age,            T007_012,,,Identical,,,,,
-,,Age.65.Over,,85 Years of Age and Over,            T007_013,,,Identical,,,,,
-Income,At or Below the Poverty Level,At.or.Below.Pov,ACS 5-year 2008-2012 (Social Explorer),Ratio Of Income in 2009 To Poverty Level: Under 0.5,T117_002,Population for whom poverty status is determined,T117_001,Ratio of Income in 2014 to Poverty Level: Under 0.5,,,,,
-,,At.or.Below.Pov,,Ratio Of Income in 2009 To Poverty Level: 0.5 - 0.74,T117_003,,,Ratio of Income in 2014 to Poverty Level: 0.5 - 0.74,,,,,
-,,At.or.Below.Pov,,Ratio Of Income in 2009 To Poverty Level: 0.75 - 0.99,T117_004,,,Ratio of Income in 2014 to Poverty Level: 0.75 - 0.99,,,,,
-,Somewhat Above the Poverty Level,Somehwat.Above.Pov,,Ratio Of Income in 2009 To Poverty Level: 1 - 1.49,T117_005,,,Ratio of Income in 2014 to Poverty Level: 1 - 1.49,,,,,
-,Well Above the Poverty Level,Well.Above.Pov,,Ratio Of Income in 2009 To Poverty Level: 0.75 - 0.99,T117_006,,,Ratio of Income in 2014 to Poverty Level: 1.50-1.99,,,,,
-,,Well.Above.Pov,,Ratio Of Income in 2009 To Poverty Level: 1 - 1.49,T117_007,,,Ratio of Income in 2014 to Poverty Level: 2.00 and over,,,,,
-Family Structure,Married families,HH.Fam.Married,ACS 5-year 2008-2012,Married-Couple Family,ACS12_5yr_B11001003,Households,ACS12_5yr_B11001001,Identical,,,,,
-,Other families,HH.Fam.Other,,Other Family,ACS12_5yr_B11001004,,,Identical,,,,,
-,Non-family households,HH.NFam.NAlone,,Householder Not Living Alone,ACS12_5yr_B11001009,,,Identical,,,,,
-,Non-family households - living alone,HH.NFam.Alone,,Householder Living Alone,ACS12_5yr_B11001008,,,Identical,,,,,
-Length in Residence,Length of residence: Since 2010,Res.since2010,ACS 5-year 2008-2012,Owner Moved In 2010 or later,ACS12_5yr_B25026003,Total Population in Occupied Housing Units,ACS12_5yr_B25026001,Identical,,,,,
-,,Res.since2010,,Renter Moved In 2010 or later,ACS12_5yr_B25026010,,,Identical,,,,,
-,Length of residence: 3-10 years,Res.3.10,,Owner Moved In 2000-2009,ACS12_5yr_B25026004,,,Identical,,,,,
-,,Res.3.10,,Renter Moved In 2000-2009,ACS12_5yr_B25026011,,,Identical,,,,,
-,Length of residence: 10-20 years,Res.10.20,,Owner Moved In 1990-1999,ACS12_5yr_B25026005,,,Identical,,,,,
-,,Res.10.20,,Renter Moved In 1990-1999,ACS12_5yr_B25026012,,,Identical,,,,,
-,Length of residence: 20 or more years,Res.20more,,Owner Moved In 1980-1989,ACS12_5yr_B25026006,,,Identical,,,,,
-,,Res.20more,,Owner Moved In 1970-1979,ACS12_5yr_B25026007,,,Identical,,,,,
-,,Res.20more,,Owner Moved In 1969 or earlier,ACS12_5yr_B25026008,,,Identical,,,,,
-,,Res.20more,,Renter Moved In 1980-1989,ACS12_5yr_B25026013,,,Identical,,,,,
-,,Res.20more,,Renter Moved In 1970-1979,ACS12_5yr_B25026014,,,Identical,,,,,
-,,Res.20more,,Renter Moved In 1969 or earlier,ACS12_5yr_B25026015,,,Identical,,,,,
-Seasonal Residency,Second homes (seasonal),Vac.Second.Home,ACS 5-year 2008-2012,"For Seasonal, Recreational, Or Occasional Use",ACS12_5yr_B25004006,Vacant Housing Units,ACS12_5yr_B25004001,Identical,,,,,
-Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2008-2012,"Less Than $10,000",ACS12_5yr_B25075002,Owner-Occupied Housing Units,ACS12_5yr_B25075001,Identical,,,,,
-,,HV.Under200k,,$10k-15k,ACS12_5yr_B25075003,,,"$10,000-14,999",,,,,
-,,HV.Under200k,,$15k-20k,ACS12_5yr_B25075004,,,"$15,000-19,999",,,,,
-,,HV.Under200k,,$20k-25k,ACS12_5yr_B25075005,,,"$20,000-24,999",,,,,
-,,HV.Under200k,,$25k-30k,ACS12_5yr_B25075006,,,"$25,000-29,999",,,,,
-,,HV.Under200k,,$30k-$35k,ACS12_5yr_B25075007,,,"$30,000-34,999",,,,,
-,,HV.Under200k,,$35k-40k,ACS12_5yr_B25075008,,,"$35,000-39,999",,,,,
-,,HV.Under200k,,$40k-50k,ACS12_5yr_B25075009,,,"$40,000-49,999",,,,,
-,,HV.Under200k,,$50k-60k,ACS12_5yr_B25075010,,,"$50,000-59,999",,,,,
-,,HV.Under200k,,$60k-70k,ACS12_5yr_B25075011,,,"$60,000-69,999",,,,,
-,,HV.Under200k,,$70k-80k,ACS12_5yr_B25075012,,,"$70,000-79,999",,,,,
-,,HV.Under200k,,$80k-90k,ACS12_5yr_B25075013,,,"$80,000-89,999",,,,,
-,,HV.Under200k,,$90k-100k,ACS12_5yr_B25075014,,,"$90,000-99,999",,,,,
-,,HV.Under200k,,$100k-125k,ACS12_5yr_B25075015,,,"$100,000-124,999",,,,,
-,,HV.Under200k,,$125k-150k,ACS12_5yr_B25075016,,,"$125,000-149,999",,,,,
-,,HV.Under200k,,$150k-175k,ACS12_5yr_B25075017,,,"$150,000-174,999",,,,,
-,,HV.Under200k,,$175k-200k,ACS12_5yr_B25075018,,,"$175,000-199,999",,,,,
-,Home values $200k-$500k,HV.200k.500k,,$200k-250k,ACS12_5yr_B25075019,,,"$200,000-249,999",,,,,
-,,HV.200k.500k,,$250k-300k,ACS12_5yr_B25075020,,,"$250,000-299,999",,,,,
-,,HV.200k.500k,,$300k-400k,ACS12_5yr_B25075021,,,"$300,000-399,999",,,,,
-,,HV.200k.500k,,$400k-500k,ACS12_5yr_B25075022,,,"$400,000-499,999",,,,,
-,Home values $500k,HV.500k.greater,,$500k-750k,ACS12_5yr_B25075023,,,"$500,000-749,999",,,,,
-,,HV.500k.greater,,$750k-1m,ACS12_5yr_B25075024,,,"$750,000-999,999",,,,,
-,,HV.500k.greater,,$1m or more,ACS12_5yr_B25075025,,,"$1,000,000 or more",,,,,
+Category,Sub-category,Category Code ,Source,Estimate,ACS 2014 5yr Variables,Universe,Universe Variable
+Housing Age,Housing Stock Built 1940 or Earlier,HS.1940.before,ACS 5-year 2010-2014,Housing stock built 1939 or earlier,ACS14_5yr_B25034010,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built 1940s,HS.1940s,ACS 5-year 2010-2014,Housing Stock built 1940-1949,ACS14_5yr_B25034009,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built 1950s-1960s,HS.mid20th,ACS 5-year 2010-2014,Housing stock built 1950-1959,ACS14_5yr_B25034008,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built 1950s-1960s,HS.mid20th,ACS 5-year 2010-2014,Housing stock built 1960-1969,ACS14_5yr_B25034007,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built 1970s-1990s,HS.late20th,ACS 5-year 2010-2014,Housing Stock built 1970-1979,ACS14_5yr_B25034006,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built 1970s-1990s,HS.late20th,ACS 5-year 2010-2014,Housing Stock built 1980-1989,ACS14_5yr_B25034005,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built 1970s-1990s,HS.late20th,ACS 5-year 2010-2014,Housing Stock built 1990-1999,ACS14_5yr_B25034004,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built Since 2000,Hs.since2000,ACS 5-year 2010-2014,Housing Stock built 2000-2009,ACS14_5yr_B25034003,Housing Units,ACS14_5yr_B25034001
+Housing Age,Housing Stock Built Since 2000,Hs.since2000,ACS 5-year 2010-2014,Housing Stock built 2010 or later,ACS14_5yr_B25034002,Housing Units,ACS14_5yr_B25034001
+Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2010-2014,"Single-Unit, Detached",ACS14_5yr_B25024002,Housing Units,ACS14_5yr_B25034001
+Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2010-2014,"Single-Unit, Attached",ACS14_5yr_B25024003,Housing Units,ACS14_5yr_B25034001
+Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,2 Units,ACS14_5yr_B25024004,Housing Units,ACS14_5yr_B25034001
+Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,3-4 Units,ACS14_5yr_B25024005,Housing Units,ACS14_5yr_B25034001
+Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,5-9 Units,ACS14_5yr_B25024006,Housing Units,ACS14_5yr_B25034001
+Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,10-19 Units,ACS14_5yr_B25024007,Housing Units,ACS14_5yr_B25034001
+Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,20-49 Units,ACS14_5yr_B25024008,Housing Units,ACS14_5yr_B25034001
+Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,50 or More Units,ACS14_5yr_B25024009,Housing Units,ACS14_5yr_B25034001
+Race,White,White,ACS 5-year 2010-2014,Not Hispanic Or Latino: White Alone,ACS14_5yr_B03002003,Total Population,ACS14_5yr_B25034001
+Race,African-American,AfAm,ACS 5-year 2010-2014,Not Hispanic Or Latino: Black or African American Alone,ACS14_5yr_B03002004,Total Population,ACS14_5yr_B25034001
+Race,Hispanic/Latino,HspLat,ACS 5-year 2010-2014,Hispanic Or Latino,ACS14_5yr_B03002012,Total Population,ACS14_5yr_B25034001
+Race,Asian,Asian,ACS 5-year 2010-2014,Not Hispanic Or Latino: Asian Alone,ACS14_5yr_B03002006,Total Population,ACS14_5yr_B25034001
+Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),Under 5 Years of Age,            T007_002,Total Population,            T007_001
+Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),5 to 9 Years of Age,            T007_003,Total Population,            T007_001
+Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),10 to 14 Years of Age,            T007_004,Total Population,            T007_001
+Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),15 to 17 Years of Age,            T007_005,Total Population,            T007_001
+Age,Age 18 to 34,Age.18.34,ACS 5-year 2010-2014 (Social Explorer),18 to 24 Years of Age,            T007_006,Total Population,            T007_001
+Age,Age 18 to 34,Age.18.34,ACS 5-year 2010-2014 (Social Explorer),25 to 34 Years of Age,            T007_007,Total Population,            T007_001
+Age,Age 35 to 65,Age.35.65,ACS 5-year 2010-2014 (Social Explorer),35 to 44 Years of Age,            T007_008,Total Population,            T007_001
+Age,Age 35 to 65,Age.35.65,ACS 5-year 2010-2014 (Social Explorer),45 to 54 Years of Age,            T007_009,Total Population,            T007_001
+Age,Age 35 to 65,Age.35.65,ACS 5-year 2010-2014 (Social Explorer),55 to 64 Years of Age,            T007_010,Total Population,            T007_001
+Age,Age 65 and Over,Age.65.Over,ACS 5-year 2010-2014 (Social Explorer),65 to 74 Years of Age,            T007_011,Total Population,            T007_001
+Age,Age 65 and Over,Age.65.Over,ACS 5-year 2010-2014 (Social Explorer),75 to 84 Years of Age,            T007_012,Total Population,            T007_001
+Age,Age 65 and Over,Age.65.Over,ACS 5-year 2010-2014 (Social Explorer),85 Years of Age and Over,            T007_013,Total Population,            T007_001
+Income,At or Below the Poverty Level,At.or.Below.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: Under .50,ACS14_5yr_C17002002,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Income,At or Below the Poverty Level,At.or.Below.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: .50 To .99,ACS14_5yr_C17002003,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Income,Somewhat Above the Poverty Level,Somehwat.Above.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: 1.00 To 1.24,ACS14_5yr_C17002004,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Income,Somewhat Above the Poverty Level,Somehwat.Above.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: 1.25 To 1.49,ACS14_5yr_C17002005,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Income,Well Above the Poverty Level,Well.Above.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: 1.50 To 1.84,ACS14_5yr_C17002006,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Income,Well Above the Poverty Level,Well.Above.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: 1.85 To 1.99,ACS14_5yr_C17002007,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Income,Well Above the Poverty Level,Well.Above.Pov,ACS 5-year 2010-2014,Ratio of Income To Poverty Level In the Past 12 Months: 2.00 and Over,ACS14_5yr_C17002008,Population for whom poverty status is determined,ACS14_5yr_C17002001
+Family Structure,Married families,HH.Fam.Married,ACS 5-year 2010-2014,Married-Couple Family,ACS14_5yr_B11001003,Households,ACS14_5yr_B11001001
+Family Structure,Other families,HH.Fam.Other,ACS 5-year 2010-2014,Other Family,ACS14_5yr_B11001004,Households,ACS14_5yr_B11001001
+Family Structure,Non-family households,HH.NFam.NAlone,ACS 5-year 2010-2014,Householder Not Living Alone,ACS14_5yr_B11001009,Households,ACS14_5yr_B11001001
+Family Structure,Non-family households - living alone,HH.NFam.Alone,ACS 5-year 2010-2014,Householder Living Alone,ACS14_5yr_B11001008,Households,ACS14_5yr_B11001001
+Length in Residence,Length of residence: Since 2010,Res.since2010,ACS 5-year 2010-2014,Owner Moved In 2010 or later,ACS14_5yr_B25038003,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: Since 2010,Res.since2010,ACS 5-year 2010-2014,Renter Moved In 2010 or later,ACS14_5yr_B25038010,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 3-10 years,Res.3.10,ACS 5-year 2010-2014,Owner Moved In 2000-2009,ACS14_5yr_B25038004,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 3-10 years,Res.3.10,ACS 5-year 2010-2014,Renter Moved In 2000-2009,ACS14_5yr_B25038011,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 10-20 years,Res.10.20,ACS 5-year 2010-2014,Owner Moved In 1990-1999,ACS14_5yr_B25038005,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 10-20 years,Res.10.20,ACS 5-year 2010-2014,Renter Moved In 1990-1999,ACS14_5yr_B25038012,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 20 or more years,Res.20more,ACS 5-year 2010-2014,Owner Moved In 1980-1989,ACS14_5yr_B25038006,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 20 or more years,Res.20more,ACS 5-year 2010-2014,Owner Moved In 1970-1979,ACS14_5yr_B25038007,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 20 or more years,Res.20more,ACS 5-year 2010-2014,Owner Moved In 1969 or earlier,ACS14_5yr_B25038008,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 20 or more years,Res.20more,ACS 5-year 2010-2014,Renter Moved In 1980-1989,ACS14_5yr_B25038013,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 20 or more years,Res.20more,ACS 5-year 2010-2014,Renter Moved In 1970-1979,ACS14_5yr_B25038014,Occupied Housing Units,ACS14_5yr_B25038001
+Length in Residence,Length of residence: 20 or more years,Res.20more,ACS 5-year 2010-2014,Renter Moved In 1969 or earlier,ACS14_5yr_B25038015,Occupied Housing Units,ACS14_5yr_B25038001
+Seasonal Residency,Second homes (seasonal),Vac.Second.Home,ACS 5-year 2010-2014,"For Seasonal, Recreational, Or Occasional Use",ACS14_5yr_B25004006,Vacant Housing Units,ACS14_5yr_B25004001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"Less Than $10,000",ACS14_5yr_B25075002,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$10,000-14,999",ACS14_5yr_B25075003,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$15,000-19,999",ACS14_5yr_B25075004,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$20,000-24,999",ACS14_5yr_B25075005,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$25,000-29,999",ACS14_5yr_B25075006,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$30,000-34,999",ACS14_5yr_B25075007,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$35,000-39,999",ACS14_5yr_B25075008,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$40,000-49,999",ACS14_5yr_B25075009,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$50,000-59,999",ACS14_5yr_B25075010,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$60,000-69,999",ACS14_5yr_B25075011,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$70,000-79,999",ACS14_5yr_B25075012,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$80,000-89,999",ACS14_5yr_B25075013,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$90,000-99,999",ACS14_5yr_B25075014,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$100,000-124,999",ACS14_5yr_B25075015,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$125,000-149,999",ACS14_5yr_B25075016,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$150,000-174,999",ACS14_5yr_B25075017,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values <$200k,HV.Under200k,ACS 5-year 2010-2014,"$175,000-199,999",ACS14_5yr_B25075018,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $200k-$500k,HV.200k.500k,ACS 5-year 2010-2014,"$200,000-249,999",ACS14_5yr_B25075019,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $200k-$500k,HV.200k.500k,ACS 5-year 2010-2014,"$250,000-299,999",ACS14_5yr_B25075020,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $200k-$500k,HV.200k.500k,ACS 5-year 2010-2014,"$300,000-399,999",ACS14_5yr_B25075021,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $200k-$500k,HV.200k.500k,ACS 5-year 2010-2014,"$400,000-499,999",ACS14_5yr_B25075022,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $500k,HV.500k.greater,ACS 5-year 2010-2014,"$500,000-749,999",ACS14_5yr_B25075023,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $500k,HV.500k.greater,ACS 5-year 2010-2014,"$750,000-999,999",ACS14_5yr_B25075024,Owner-Occupied Housing Units,ACS14_5yr_B25075001
+Home Values,Home values $500k,HV.500k.greater,ACS 5-year 2010-2014,"$1,000,000 or more",ACS14_5yr_B25075025,Owner-Occupied Housing Units,ACS14_5yr_B25075001
