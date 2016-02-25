@@ -8,18 +8,18 @@ Housing Age,Housing Stock Built 1970s-1990s,HS.late20th,ACS 5-year 2010-2014,Hou
 Housing Age,Housing Stock Built 1970s-1990s,HS.late20th,ACS 5-year 2010-2014,Housing Stock built 1990-1999,ACS14_5yr_B25034004,Housing Units,ACS14_5yr_B25034001
 Housing Age,Housing Stock Built Since 2000,Hs.since2000,ACS 5-year 2010-2014,Housing Stock built 2000-2009,ACS14_5yr_B25034003,Housing Units,ACS14_5yr_B25034001
 Housing Age,Housing Stock Built Since 2000,Hs.since2000,ACS 5-year 2010-2014,Housing Stock built 2010 or later,ACS14_5yr_B25034002,Housing Units,ACS14_5yr_B25034001
-Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2010-2014,"Single-Unit, Detached",ACS14_5yr_B25024002,Housing Units,ACS14_5yr_B25034001
-Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2010-2014,"Single-Unit, Attached",ACS14_5yr_B25024003,Housing Units,ACS14_5yr_B25034001
-Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,2 Units,ACS14_5yr_B25024004,Housing Units,ACS14_5yr_B25034001
-Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,3-4 Units,ACS14_5yr_B25024005,Housing Units,ACS14_5yr_B25034001
-Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,5-9 Units,ACS14_5yr_B25024006,Housing Units,ACS14_5yr_B25034001
-Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,10-19 Units,ACS14_5yr_B25024007,Housing Units,ACS14_5yr_B25034001
-Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,20-49 Units,ACS14_5yr_B25024008,Housing Units,ACS14_5yr_B25034001
-Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,50 or More Units,ACS14_5yr_B25024009,Housing Units,ACS14_5yr_B25034001
-Race,White,White,ACS 5-year 2010-2014,Not Hispanic Or Latino: White Alone,ACS14_5yr_B03002003,Total Population,ACS14_5yr_B25034001
-Race,African-American,AfAm,ACS 5-year 2010-2014,Not Hispanic Or Latino: Black or African American Alone,ACS14_5yr_B03002004,Total Population,ACS14_5yr_B25034001
-Race,Hispanic/Latino,HspLat,ACS 5-year 2010-2014,Hispanic Or Latino,ACS14_5yr_B03002012,Total Population,ACS14_5yr_B25034001
-Race,Asian,Asian,ACS 5-year 2010-2014,Not Hispanic Or Latino: Asian Alone,ACS14_5yr_B03002006,Total Population,ACS14_5yr_B25034001
+Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2010-2014,"Single-Unit, Detached",ACS14_5yr_B25024002,Housing Units,ACS14_5yr_B25024001
+Housing Density,Single Family Residential,HU.SFR,ACS 5-year 2010-2014,"Single-Unit, Attached",ACS14_5yr_B25024003,Housing Units,ACS14_5yr_B25024001
+Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,2 Units,ACS14_5yr_B25024004,Housing Units,ACS14_5yr_B25024001
+Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,3-4 Units,ACS14_5yr_B25024005,Housing Units,ACS14_5yr_B25024001
+Housing Density,Small Multifamily Residential (Under 10 Units),HU.MFR.sm,ACS 5-year 2010-2014,5-9 Units,ACS14_5yr_B25024006,Housing Units,ACS14_5yr_B25024001
+Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,10-19 Units,ACS14_5yr_B25024007,Housing Units,ACS14_5yr_B25024001
+Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,20-49 Units,ACS14_5yr_B25024008,Housing Units,ACS14_5yr_B25024001
+Housing Density,Medium Multifamily Residential (10+ Units),HU.MFR.lg,ACS 5-year 2010-2014,50 or More Units,ACS14_5yr_B25024009,Housing Units,ACS14_5yr_B25024001
+Race,White,White,ACS 5-year 2010-2014,Not Hispanic Or Latino: White Alone,ACS14_5yr_B03002003,Total Population,ACS14_5yr_B03002001
+Race,African-American,AfAm,ACS 5-year 2010-2014,Not Hispanic Or Latino: Black or African American Alone,ACS14_5yr_B03002004,Total Population,ACS14_5yr_B03002001
+Race,Hispanic/Latino,HspLat,ACS 5-year 2010-2014,Hispanic Or Latino,ACS14_5yr_B03002012,Total Population,ACS14_5yr_B03002001
+Race,Asian,Asian,ACS 5-year 2010-2014,Not Hispanic Or Latino: Asian Alone,ACS14_5yr_B03002006,Total Population,ACS14_5yr_B03002001
 Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),Under 5 Years of Age,            T007_002,Total Population,            T007_001
 Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),5 to 9 Years of Age,            T007_003,Total Population,            T007_001
 Age,Age 18 and Under,Age.18.Under,ACS 5-year 2010-2014 (Social Explorer),10 to 14 Years of Age,            T007_004,Total Population,            T007_001
