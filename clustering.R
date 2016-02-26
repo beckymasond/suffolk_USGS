@@ -58,7 +58,8 @@ Outputs:
 source("support_functions.R",echo=F)
 
 ##Generate and load input data
-source("data_prep.R")
+# source("data_prep.R")
+source("data_prep2.R")
 load("data/Suffolk_USGS_Inputs.RData")
 
 ##Load blockgroups
@@ -135,7 +136,7 @@ bgs.in.muni<-cbind(bgs@data,bgs.in.muni)
 bgs.in.muni<-bgs.in.muni[!is.na(bgs.in.muni$NAME10),]
 
 #This should be total population **NEED TO VERIFY**
-totalPops<-inVars.raw$race.eth[,c("GEOID","TOTAL")] 
+totalPops<-inVars.raw$Race[,c("GEOID","TOTAL")] 
 
 #Merge pops & cluster assignments to bg.in.muni
 bgs.in.muni<-merge(merge(totalPops,bgs.in.muni,by="GEOID"),sufClust,by="GEOID")
