@@ -19,6 +19,9 @@ Inputs:
     very large). 'landcover_prep.R' is included in this repository for reference (includes
     NLCD 2011 download). 
 
+  5. 'data/rawACSdata_all/blockgroup_all_empty.csv': list of unpopulated block groups by 
+    block group ACS code.
+
 Outputs: RData file 'Suffolk_USGS_Inputs.RData', which contains: 
 
   1. 'inVars.prop': a dataframe of input variables for cluster analysis,
