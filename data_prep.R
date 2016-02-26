@@ -6,13 +6,15 @@ Description: Assembles raw ACS and NLCD input data by source dataset into an R d
 
 Inputs: 
 
-  1. 'data/blockgroup_all_combined_ests.csv': Combined ACS 5-Year Estimates (2014) at the
+  1. 'data/rawACSdata_all/blockgroup_all_ests.csv': Combined ACS 5-Year Estimates (2014) at the
     block-group level for selected datasets..
 
   2. 'data/data_dict_ACS5Y2014.csv': data dictionary for selected ACS 
     datasets.
 
-  3. 'data/NLCD_Suffolk_Grouped.RData': NLCD 2011 categories grouped for Suffolk County by 
+  3. 'master_vars.csv': ACS variable grouping scheme by variable names and codes.
+
+  4. 'data/NLCD_Suffolk_Grouped.RData': NLCD 2011 categories grouped for Suffolk County by 
     blockgroup. These are generated from 'landcover_prep.R' (NOT RUN as the NLCD files are 
     very large). 'landcover_prep.R' is included in this repository for reference (includes
     NLCD 2011 download). 
@@ -32,18 +34,38 @@ Outputs: RData file 'Suffolk_USGS_Inputs.RData', which contains:
 
 ####Setup####
 
-inVars<-read.csv("data/blockgroup_all_combined_ests.csv",stringsAsFactors = F)
+inVars<-read.csv("data/rawACSdata_all/blockgroup_all_ests.csv",stringsAsFactors = F) 
 data.dict<-read.csv("data/data_dict_ACS5Y2014.csv",stringsAsFactors = F)
+group.key<-read.csv("master_vars.csv",stringsAsFactors = F)[,c("Category","Category.Code","Estimate","Universe.Variable")] #for grouping variables
 
-#Exclude SE's (for now)
-inVars<-inVars[,!grepl("SE_",names(inVars))]
+##Make variable names human-readable using data dictionary
+acs.idx<-which(names(inVars)!="GEOID" & !grepl("SE_",names(inVars))) #index of ACS var names
+se.idx<-which(grepl("SE_",names(inVars))) #index of social explorer var names 
+names(inVars)[acs.idx]<-substr(names(inVars)[acs.idx],1,(nchar(names(inVars)[-1])-1)) #remove trailing character from ACS var names
+names(inVars)[se.idx]<-substr(names(inVars)[se.idx],4,nchar(names(inVars)[se.idx])) #remove prefix from SE var names
+names(inVars)[-1]<-sapply(X=names(inVars)[-1],FUN=function(X){ X<-data.dict[data.dict$Variable==X,]$Name }) #update names
 
-#Make variable names human-readable using data dictionary
-names(inVars)[-1]<-substr(names(inVars)[-1],1,(nchar(names(inVars)[-1])-1)) #remove trailing character from var names
-names(inVars)[2:length(inVars)]<-sapply(X=names(inVars)[2:length(inVars)],FUN=function(X){ X<-data.dict[data.dict$Variable==X,]$Name })
+#Update 'group.key$Universe.Variable' (dataset total codes) for compatibility with 'data.dict'
+for (v in unique(group.key$Universe.Variable)){
+  
+  #Get a second instance of the variable name for updating
+  vnm<-group.key[group.key$Universe.Variable==v,]$Universe.Variable
+  
+  if(grepl("ACS14_5yr",v)){ #ACS Variable
+    
+    vnm=substr(vnm,11,nchar(vnm)) #strip leading ACS code
+    vnm=paste(substr(vnm,1,(nchar(vnm)-3)),"001",sep="_") #update code suffix
+  
+  }else if(substr(v,1,1)==" "){ #Social Explorer Variable with leading indent problem
+    
+    #remove indent
+    vnm=gsub(" ","",vnm)
+    
+  }
 
-#more readable reference for subsetting...
-enumNames<-function(x){ data.frame(names(x)) } 
+  group.key[group.key$Universe.Variable==v,]$Universe.Variable<-vnm #reassign var name
+  
+}
 
 ####Combine Variables####
 
@@ -54,18 +76,8 @@ inVars.raw<-list()
 ##Create data frame for storing proportions of raw variables. 
 inVars.prop<-data.frame(GEOID=inVars$GEOID)
 
-#for converting raw data values to proportions
-#now in 'support_functions.R'
-# toprop<-function(inData){ return(data.frame(GEOID=inData$GEOID,sapply(X=inData[,-c(1:2)],FUN=function(X){X/inData$TOTAL}))) }
 
-##I'm calculating totals by summing values for each dataset, since
-#total fields appear to be missing. I'm assuming complete datasets were pulled (edit: not race/eth - need fix).
-#I'll replace these with the total ests once I can find them to avoid
-#any inconsistencies...
-
-###Biophysical###
-
-##Land Cover
+##Prep Land Cover inputs
 
 #Load NLCD 2011 categories grouped for Suffolk County by blockgroup
 # source("landcover_prep.R") #tabulate and group NLCD categories (not run)
@@ -73,72 +85,50 @@ load("data/NLCD_Suffolk_Grouped.RData")
 inVars.raw$lc<-nlcd.tab #create list entry for 'inVars.raw'
 inVars.prop<-merge(inVars.prop,toprop(nlcd.tab),by="GEOID") #append to 'inVars.prop'
 
-##Housing Stock Age
-inVars.raw$hage<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,2]) #create list entry for 'inVars.raw'
-inVars.raw$hage$HS.1940.before<-inVars[,3] #1940 or before
-inVars.raw$hage$HS.Mid20th<-rowSums(inVars[,4:6],na.rm=T) #Mid-20th Century (1940-1970)
-inVars.raw$hage$HS.Late20th<-rowSums(inVars[,7:9],na.rm=T) #Late 20th Century (1970-2000)
-inVars.raw$hage$HS.2000s<-rowSums(inVars[,10:11],na.rm=T) #Since 2000
-inVars.prop<-merge(inVars.prop,toprop(inVars.raw$hage),by="GEOID") #append to 'inVars.prop'
 
-##Housing Stock Size
-inVars.raw$hsize<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,12])
-inVars.raw$hsize$HU.SFR<-rowSums(inVars[,13:14],na.rm = T)
-inVars.raw$hsize$HU.MFR.sm<-rowSums(inVars[,15:17],na.rm=T)
-inVars.raw$hsize$HU.MFR.lg<-rowSums(inVars[,18:20],na.rm=T)
-inVars.prop<-merge(inVars.prop,toprop(inVars.raw$hsize),by="GEOID")
+##Prep ACS Variables
+for(vvar in unique(group.key$Category)){
 
-##Home Values
-inVars.raw$hval<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,46])
-inVars.raw$hval$HV.Under200k<-rowSums(inVars[,47:63],na.rm=T)
-inVars.raw$hval$HV.200k.500k<-rowSums(inVars[,64:67],na.rm=T)
-inVars.raw$hval$HV.500k.greater<-rowSums(inVars[,68:70],na.rm=T)
-inVars.prop<-merge(inVars.prop,toprop(inVars.raw$hval),by="GEOID")
+  #Get category total. This is *really* inefficient, we should simplify... 
+  vtot<-data.dict[data.dict$Variable==group.key[group.key$Category==vvar,]$Universe.Variable[1],]$Name
+  
+  print(paste(vvar,vtot))
+  
+  #Group variable counts 
+  inVars.raw[[vvar]]<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,vtot])
+  
+  #Get category variable codes
+  catv<-group.key[group.key$Category==vvar,]
+  
+  #Assemble composite vars and assign to 'inVars.raw[[*category*]]'
+  for(gvar in unique(catv$Category.Code)){
+    
+    #index values of variables for grouping in inVars
+    #NOTE that if a variable is missing it will be ignored!!
+    gvar.idx<-which(names(inVars) %in% catv[catv$Category.Code==gvar,]$Estimate)
+    
+    #group variables and append to category df
+    if(length(gvar.idx)>1){
+      
+      inVars.raw[[vvar]][[gvar]]<-rowSums(inVars[,gvar.idx],na.rm=T)
+      
+    }else{
+      
+      inVars.raw[[vvar]][[gvar]]<-inVars[,gvar.idx]
+      
+    }
+  }
+  
+  #convert to proportions and append to inVars.prop
+  inVars.prop<-merge(inVars.prop,toprop(inVars.raw[[vvar]]),by="GEOID")
+}
 
-
-###SES###
-
-##Race/Ethnicity
-#**Is this the right total population field??**
-inVars.raw$race.eth<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,21],
-                          inVars[,22:25])
-inVars.prop<-merge(inVars.prop,toprop(inVars.raw$race.eth),by="GEOID")
-
-##Age 
-##ADD ME!!
-
-##Income level
-##ADD ME!!
-
-##Family Structure
-inVars.raw$fam<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,26])
-inVars.raw$fam$HH.Married<-inVars[,27]
-inVars.raw$fam$HH.SinglePt<-inVars[,28]
-inVars.raw$fam$HH.NonFamily<-rowSums(inVars[,29:30],na.rm=T)
-inVars.prop<-merge(inVars.prop,toprop(inVars.raw$fam),by="GEOID")
-
-##Length in Residence
-##ADD ME!!
-
-##Seasonal Homes
-inVars.raw$seasonal<-data.frame(GEOID=inVars$GEOID,TOTAL=inVars[,44],Seasonal.Homes=inVars[,45])
-inVars.prop<-merge(inVars.prop,toprop(inVars.raw$seasonal),by="GEOID")
 
 ####Cleanup#####
 
 ###Remove observations with household count of 0###
 
-##Generate empty GEOIDs list
-empty.list<-list.files(paste0(getwd(),"/data"))
-empty.list<-empty.list[grepl("_empty",empty.list)]
-
-empties<-data.frame()
-for (empty in empty.list){
-  
-  emp<-read.csv(paste0("data/",empty),header=F,stringsAsFactors = F)
-  empties<-rbind(empties,emp)
-  
-}
+empties<-read.csv("data/rawACSdata_all/blockgroup_all_empty.csv",stringsAsFactors=F)[,1]
 
 ##Remove empty observations from 'inVars.prop' and 'inVars.raw'
 inVars.prop<-inVars.prop[!inVars.prop$GEOID %in% empties,]
