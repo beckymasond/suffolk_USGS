@@ -30,4 +30,5 @@ Contact Information:
 Rebecca Davies,
 rebecca.m.davies@colorado.edu
 
-Joe Tuccillo
+Joe Tuccillo,
+joseph.tuccillo@colorado.edu
