@@ -1,5 +1,7 @@
 # suffolk_USGS
 
+Date repository opened: Feb. 11, 2016
+
 Authors: Rebecca Davies (CU Boulder), Joe Tuccillo (CU Boulder)
 
 Contributors: Seth Spielman (CU Boulder), Nate Wood (USGS)
