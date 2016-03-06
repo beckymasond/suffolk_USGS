@@ -1,0 +1,32 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_poverty_empty.csv - List of block groups that contain zero households
+blockgroup_poverty_ests.csv - List of block group variable estimates
+blockgroup_poverty_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* C17002_001E = Total Ratio of Income To Poverty Level In the Past 12 Months estimates (universe: Population for whom poverty status is determined)
+* C17002_001M = Total Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_002E = Under 0.50 Ratio of Income To Poverty Level In the Past 12 Months estimates
+* C17002_002M = Under 0.50 Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_003E = 0.50 To 0.99 Ratio of Income To Poverty Level In the Past 12 Months estimates
+* C17002_003M = 0.50 To 0.99 Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_004E = 1.00 To 1.24 Ratio of Income To Poverty Level In the Past 12 Months estimates
+* C17002_004M = 1.00 To 1.24 Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_005E = 1.25 To 1.49 Ratio of Income To Poverty Level In the Past 12 Months estimates
+* C17002_005M = 1.25 To 1.49 Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_006E = 1.50 To 1.84 Ratio of Income To Poverty Level In the Past 12 Months estimates	
+* C17002_006M = 1.50 To 1.84 Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_007E = 1.85 To 1.99 Ratio of Income To Poverty Level In the Past 12 Months estimates
+* C17002_007M = 1.85 To 1.99 Ratio of Income To Poverty Level In the Past 12 Months margin of error
+* C17002_008E = 2.00 and Over Ratio of Income To Poverty Level In the Past 12 Months estimates	
+* C17002_008M = 2.00 and Over Ratio of Income To Poverty Level In the Past 12 Months margin of error
+
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

@@ -1,0 +1,43 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_occupancy_empty.csv - List of block groups that contain zero households
+blockgroup_occupancy_ests.csv - List of block group variable estimates
+blockgroup_occupancy_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+blockgroup_occupancy_columns.csv - Definitions for column names in ests and moes files
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* B25038_001E = Total Tenure By Year Householder Moved Into Unit estimates (universe: Occupied housing units) 	
+* B25038_001M = Total Tenure By Year Householder Moved Into Unit margin of error	
+* B25038_003E = Moved In 2010 or Later - Tenure By Year Householder Moved Into Unit (Owner Occupied) estimates
+* B25038_003M = Moved In 2010 or Later - Tenure By Year Householder Moved Into Unit (Owner Occupied) margin of error
+* B25038_004E = Moved In 2000 To 2009 - Tenure By Year Householder Moved Into Unit (Owner Occupied) estimates 
+* B25038_004M = Moved In 2000 To 2009 - Tenure By Year Householder Moved Into Unit (Owner Occupied) margin of error	
+* B25038_005E = Moved In 1990 To 1999 - Tenure By Year Householder Moved Into Unit (Owner Occupied) estimates	
+* B25038_005M = Moved In 1990 To 1999 - Tenure By Year Householder Moved Into Unit (Owner Occupied) margin of error	
+* B25038_006E = Moved In 1980 To 1989 - Tenure By Year Householder Moved Into Unit (Owner Occupied) estimates	
+* B25038_006M = Moved In 1980 To 1989 - Tenure By Year Householder Moved Into Unit (Owner Occupied) margin of error
+* B25038_007E = Moved In 1970 to 1979 - Tenure By Year Householder Moved Into Unit (Owner Occupied) estimates
+* B25038_007M = Moved In 1970 to 1979 - Tenure By Year Householder Moved Into Unit (Owner Occupied) margin of error
+* B25038_008E = Moved In 1969 or Earlier - Tenure By Year Householder Moved Into Unit (Owner Occupied) estimates	
+* B25038_008M = Moved In 1969 or Earlier - Tenure By Year Householder Moved Into Unit (Owner Occupied) margin of error
+* B25038_010E = Moved In 2010 or Later - Tenure By Year Householder Moved Into Unit (Renter Occupied) estimates	
+* B25038_010M = Moved In 2010 or Later - Tenure By Year Householder Moved Into Unit (Renter Occupied) margin of error	
+* B25038_011E = Moved In 2000 To 2009 - Tenure By Year Householder Moved Into Unit (Renter Occupied) estimates		
+* B25038_011M = Moved In 2000 To 2009 - Tenure By Year Householder Moved Into Unit (Renter Occupied) margin of error	
+* B25038_012E = Moved In 1990 To 1999 - Tenure By Year Householder Moved Into Unit (Renter Occupied) estimates
+* B25038_012M = Moved In 1990 To 1999 - Tenure By Year Householder Moved Into Unit (Renter Occupied) margin of error
+* B25038_013E = Moved In 1980 To 1989 - Tenure By Year Householder Moved Into Unit (Renter Occupied) estimates
+* B25038_013M = Moved In 1980 To 1989 - Tenure By Year Householder Moved Into Unit (Renter Occupied) margin of error	
+* B25038_014E = Moved In 1970 To 1979 - Tenure By Year Householder Moved Into Unit (Renter Occupied) estimates
+* B25038_014M = Moved In 1970 To 1979 - Tenure By Year Householder Moved Into Unit (Renter Occupied) margin of error	
+* B25038_015E = Moved In 1969 or Earlier - Tenure By Year Householder Moved Into Unit (Renter Occupied) estimates
+* B25038_015M = Moved In 1969 or Earlier - Tenure By Year Householder Moved Into Unit (Renter Occupied) margin of error
+
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

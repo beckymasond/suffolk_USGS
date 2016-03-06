@@ -1,0 +1,27 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded from Social Explorer: http://www.socialexplorer.com/
+
+Files:
+blockgroup_age_ests.csv - List of block group variable estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* SE_T007_001 = Total Population Age estimates (universe: Total Population)
+* SE_T007_002 = Under 5 Years Age estimates
+* SE_T007_003 = 5 to 9 Years Age estimates
+* SE_T007_004 = 10 to 14 Years Age estimates
+* SE_T007_005 = 15 to 17 Years Age estimates
+* SE_T007_006 = 18 to 24 Years Age estimates
+* SE_T007_007 = 25 to 34 Years Age estimates
+* SE_T007_008 = 35 to 44 Years Age estimates
+* SE_T007_009 = 45 to 54 Years Age estimates
+* SE_T007_010 = 55 to 64 Years Age estimates
+* SE_T007_011 = 65 to 74 Years Age estimates	
+* SE_T007_012 = 75 to 84 Years Age estimates	
+* SE_T007_013 = 85 Years and over Age estimates
+
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

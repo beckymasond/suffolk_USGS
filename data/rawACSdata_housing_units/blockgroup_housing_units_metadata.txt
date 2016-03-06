@@ -1,0 +1,34 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_housing_units_empty.csv - List of block groups that contain zero households
+blockgroup_housing_units_ests.csv - List of block group variable estimates
+blockgroup_housing_units_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* B25024_001E = Total Units in Structure estimates (universe: Housing units)	
+* B25024_001M = Total Units in Structure margin of error
+* B25024_002E = 1, Detached Units In Structure estimates
+* B25024_002M = 1, Detached Units In Structure margin of error	
+* B25024_003E = 1, Attached Units In Structure estimates	
+* B25024_003M = 1, Attached Units In Structure margin of error
+* B25024_004E = 2 Units In Structure estimates
+* B25024_004M = 2 Units In Structure margin of error
+* B25024_005E = 3 or 4 Units In Structure estimates
+* B25024_005M = 3 or 4 Units In Structure margin of error
+* B25024_006E = 5 To 9 Units In Structure estimates
+* B25024_006M = 5 To 9 Units In Structure margin of error
+* B25024_007E = 10 To 19 Units In Structure estimates
+* B25024_007M = 10 To 19 Units In Structure margin of error
+* B25024_008E = 20 To 49 Units In Structure estimates	
+* B25024_008M = 20 To 49 Units In Structure margin of error
+* B25024_009E = 50 or More Units In Structure estimates
+* B25024_009M = 50 or More Units In Structure margin of error
+	
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

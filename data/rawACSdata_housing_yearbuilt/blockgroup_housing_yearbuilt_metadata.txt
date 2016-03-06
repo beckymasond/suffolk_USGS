@@ -1,0 +1,36 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_housing_yearbuilt_empty.csv - List of block groups that contain zero households
+blockgroup_housing_yearbuilt_ests.csv - List of block group variable estimates
+blockgroup_housing_yearbuilt_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* B25034_001E = Total Year Structure Built estimates (universe: Housing units)	 
+* B25034_001M = Total Year Structure Built margin of error
+* B25034_002E = Built 2010 or Later - Year Structure Built estimates 
+* B25034_002M = Built 2010 or Later - Year Structure Built margin of error
+* B25034_003E = Built 2000 To 2009 - Year Structure Built estimates 	
+* B25034_003M = Built 2000 To 2009 - Year Structure Built margin of error 
+* B25034_004E = Built 1990 To 1999 - Year Structure Built estimates 
+* B25034_004M = Built 1990 To 1999 - Year Structure Built margin of error
+* B25034_005E = Built 1980 To 1989 - Year Structure Built estimates 
+* B25034_005M = Built 1980 To 1989 - Year Structure Built margin of error 
+* B25034_006E = Built 1970 To 1979 - Year Structure Built estimates
+* B25034_006M = Built 1970 To 1979 - Year Structure Built margin of error
+* B25034_007E = Built 1960 To 1969 - Year Structure Built estimates
+* B25034_007M = Built 1960 To 1969 - Year Structure Built margin of error
+* B25034_008E = Built 1950 To 1959 - Year Structure Built estimates
+* B25034_008M = Built 1950 To 1959 - Year Structure Built margin of error
+* B25034_009E = Built 1940 To 1949 - Year Structure Built estimates
+* B25034_009M = Built 1940 To 1949 - Year Structure Built margin of error
+* B25034_010E = Built 1939 or Earlier - Year Structure Built estimates
+* B25034_010M = Built 1939 or Earlier - Year Structure Built margin of error 	
+	
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

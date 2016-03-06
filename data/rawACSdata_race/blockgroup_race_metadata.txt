@@ -1,0 +1,26 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_race_empty.csv - List of block groups that contain zero households
+blockgroup_race_ests.csv - List of block group variable estimates
+blockgroup_race_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* B03002_001E = Total Hispanic or Latino Origin By Race estimates (universe: Total population)
+* B03002_001M = Total Hispanic or Latino Origin By Race margin of error
+* B03002_003E = White Alone (Not Hispanic Or Latino) estimates
+* B03002_003M = White Alone (Not Hispanic Or Latino) margin of error
+* B03002_004E = Black Or African American Alone (Not Hispanic Or Latino) estimates
+* B03002_004M = Black Or African American Alone (Not Hispanic Or Latino) margin of error
+* B03002_012E = Hispanic or Latino estimates
+* B03002_012M = Hispanic or Latino margin of error
+* B03002_006E = Asian Alone (Not Hispanic Or Latino) estimates
+* B03002_006M = Asian Alone (Not Hispanic Or Latino) margin of error
+
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

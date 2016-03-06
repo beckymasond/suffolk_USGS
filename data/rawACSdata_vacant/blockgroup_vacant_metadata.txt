@@ -1,0 +1,20 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_vacant_empty.csv - List of block groups that contain zero households
+blockgroup_vacant_ests.csv - List of block group variable estimates
+blockgroup_vacant_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* B25004_001E = Total vacant housing units estimates (universe: vacant housing units)
+* B25004_001M = Total vacant housing units margin of error (
+* B25004_006E = Vacant housing units for seasonal, recreational, or occasional use estimates
+* B25004_006M = Vacant housing units for seasonal, recreational, or occasional use margin of error
+
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+

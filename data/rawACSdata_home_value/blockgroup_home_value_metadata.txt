@@ -1,0 +1,66 @@
+Data Source: 2010-2014 American Community Survey 5-Year Summary File
+ 
+Downloaded via the Census Bureau's API: http://www.census.gov/data/developers/data-sets/acs-survey-5-year-data.html
+
+Files:
+blockgroup_home_value_empty.csv - List of block groups that contain zero households
+blockgroup_home_value_ests.csv - List of block group variable estimates
+blockgroup_home_value_moes.csv - List of block group variable margins of error (MOE) associated with estimates
+
+Variables: 
+* GEOID = Census block group ID with block group number prefix removed 
+* B25075_001E = Total Value estimates (universe: Owner-occupied housing units)	
+* B25075_001M = Total Value margin of error	
+* B25075_002E = Less than $10,000 Value estimates
+* B25075_002M = Less than $10,000 Value margin of error
+* B25075_003E = $10,000 To $14,999 Value estimates	
+* B25075_003M = $10,000 To $14,999 Value margin of error	
+* B25075_004E = $15,000 To $19,999 Value estimates	
+* B25075_004M = $15,000 To $19,999 Value margin of error
+* B25075_005E = $20,000 To $24,999 Value estimates
+* B25075_005M = $20,000 To $24,999 Value margin of error
+* B25075_006E = $25,000 To $29,999 Value estimates
+* B25075_006M = $25,000 To $29,999 Value margin of error
+* B25075_007E = $30,000 To $34,999 Value estimates
+* B25075_007M = $30,000 To $34,999 Value margin of error
+* B25075_008E = $35,000 To $39,999 Value estimates
+* B25075_008M = $35,000 To $39,999 Value margin of error
+* B25075_009E = $40,000 To $49,999 Value estimates
+* B25075_009M = $40,000 To $49,999 Value margin of error	
+* B25075_010E = $50,000 To $59,999 Value estimates
+* B25075_010M = $50,000 To $59,999 Value margin of error	
+* B25075_011E = $60,000 To $69,999 Value estimates
+* B25075_011M = $60,000 To $69,999 Value margin of error	
+* B25075_012E = $70,000 To $79,999 Value estimates
+* B25075_012M = $70,000 To $79,999 Value margin of error
+* B25075_013E = $80,000 To $89,999 Value estimates
+* B25075_013M = $80,000 To $89,999 Value margin of error
+* B25075_014E = $90,000 To $99,999 Value estimates
+* B25075_014M = $90,000 To $99,999 Value margin of error
+* B25075_015E = $100,000 To $124,999 Value estimates
+* B25075_015M = $100,000 To $124,999 Value margin of error	
+* B25075_016E = $125,000 To $149,999 Value estimates
+* B25075_016M = $125,000 To $149,999 Value margin of error	
+* B25075_017E = $150,000 To $174,999 Value estimates
+* B25075_017M = $150,000 To $174,999 Value margin of error
+* B25075_018E = $175,000 To $199,999 Value estimates
+* B25075_018M = $175,000 To $199,999 Value margin of error
+* B25075_019E = $200,000 To $249,999 Value estimates
+* B25075_019M = $200,000 To $249,999 Value margin of error	
+* B25075_020E = $250,000 To $299,999 Value estimates
+* B25075_020M = $250,000 To $299,999 Value margin of error
+* B25075_021E = $300,000 To $399,999 Value estimates
+* B25075_021M = $300,000 To $399,999 Value margin of error	
+* B25075_022E = $400,000 To $499,999 Value estimates
+* B25075_022M = $400,000 To $499,999 Value margin of error
+* B25075_023E = $500,000 To $749,999 Value estimates
+* B25075_023M = $500,000 To $749,999 Value margin of error
+* B25075_024E = $750,000 To $999,999 Value estimates
+* B25075_024M = $750,000 To $999,999 Value margin of error
+* B25075_025E = $1,000,000 or More Value estimates
+* B25075_025M = $1,000,000 or More Value margin of error
+
+Geographic unit: Block group
+
+Geography: All units in Suffolk County, New York
+
