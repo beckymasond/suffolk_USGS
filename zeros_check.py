@@ -18,11 +18,15 @@ indicators = pd.DataFrame(cat_data)
 
 #create series with value True for columns in which all values are 0
 zeros = indicators.apply(lambda x: np.all(x==0))
+zeros2 = indicators.apply(lambda x: np.all(x=='0%'))
 
 #create series containing variables with only zero values
 empty = zeros[zeros == True]
+empty2 = zeros2[zeros2 == True]
 
 #create list of variable names containing only zeros 
 empty_values = empty.index.tolist()
+empty2 = empty2.index.tolist()
+empty_values.extend(empty2)
 
 print empty_values
