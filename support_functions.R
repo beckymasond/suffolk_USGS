@@ -29,6 +29,7 @@ library(cluster)
 library(ggplot2)
 library(reshape2)
 library(fpc)
+library(Rmisc)
 
 toprop<-function(inData){
   
@@ -340,5 +341,6 @@ plotHeat <- function(inData,transpose=FALSE,flip=FALSE,compare=FALSE,series.list
     
   }
   
-  if(return.heatMap){return(heatMap$data[,2:3])}
+  # if(return.heatMap){return(heatMap$data[,2:3])}
+  if(return.heatMap){return(heatMap)}
 }
