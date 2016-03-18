@@ -29,7 +29,6 @@ library(cluster)
 library(ggplot2)
 library(reshape2)
 library(fpc)
-library(Rmisc)
 
 toprop<-function(inData){
   
@@ -198,7 +197,7 @@ plotMap<-function(inGeom,inClust,geomKey="GEOID",clustKey="GEOID",compare=FALSE,
 }
 
 
-compareMv<-function(inData,verbose=F,return.means=F){
+compareMv<-function(inData,verbose=F,return.means=F,plot.ready=T){
   
   "
   
@@ -217,32 +216,63 @@ compareMv<-function(inData,verbose=F,return.means=F){
 
   Returns: 
 
-    If 'return.means=TRUE', returns the mean vectors of variable interest only.
+    If 'return.means=TRUE', returns the overall mean vectors of variable interest only.
 
-    Otherwise, default return is a matrix containing the percentage difference in 
+    If 'return.means=FALSE' and 'plot.ready=FALSE', returns a data frame whose rows describe each 
+      category mean and its average profile (percentage difference from the overall mean).
+
+    Otherwise, default return ('plot.ready=T') is a matrix containing the percentage difference in 
     the mean vector of the variables of interest by group versus the overall mean. 
 
   "
   
+  all.mean<-colMeans(inData[,-c(1:2)])
   inData<-aggregate(x=inData[,3:length(inData)],by=list(inData[,2]),na.rm=T,FUN=mean)
-  all.mean<-colMeans(inData[,2:ncol(inData)])
   
   if (verbose){
     cat(sep='\n\n')
     cat(paste("Variable Averages:",toString(names(all.mean))),all.mean,sep="\n")
   }
   
-  if(return.means){ 
+  if(return.means){ #Return the overall mean only 
     
     return(all.mean) 
     
   }else{
     
-    for (i in 2:ncol(inData)){inData[,i]<-round(100*(inData[,i]-all.mean[i-1])/all.mean[i-1])}
+    inData.avp<-inData #generate "plot.ready" version of our input DF (average profiles)
+    for (i in 2:ncol(inData.avp)){inData.avp[,i]<-round(100*((inData.avp[,i]-all.mean[i-1])/all.mean[i-1]))}
     
-    return(inData)
+    if(plot.ready){ #return the 'plot.ready' df only 
+      
+      return(inData.avp)
+      
+    }else{ #return a combination of the average profiles and means 
+      
+      #Append category means to average profiles 
+      out.avp<-data.frame(Type="ALL",t(round(all.mean,2)),stringsAsFactors = F)
+      names(out.avp)[-1]<-names(all.mean)
+      rownames(out.avp)<-"Overall Mean"
+      for(j in 1:nrow(inData.avp)){ 
+        
+        catnm<-inData[j,][,1] #Get cluster type name (safeguard if using non-numeric type names)
+      
+        avp_mean<-rbind(inData[j,],inData.avp[j,])
+        names(avp_mean)[1]<-"Type"
+        
+        rownames(avp_mean)<-c(paste("Type",catnm,"Mean"),
+                              paste("Average Profile, Type",catnm))
+        
+        out.avp<-rbind(out.avp,avp_mean)
+        
+      }
+      
+      return(out.avp)
+      
+    }
     
-  }  
+  }
+
   
 }
 
@@ -323,7 +353,8 @@ plotHeat <- function(inData,transpose=FALSE,flip=FALSE,compare=FALSE,series.list
       
     }
     
-    plot(heatMap)
+    
+#     plot(heatMap)
     
   }else{ #flip the values
     
@@ -337,10 +368,64 @@ plotHeat <- function(inData,transpose=FALSE,flip=FALSE,compare=FALSE,series.list
       theme(axis.title.x=element_blank(),axis.title.y=element_blank())+
       theme(legend.position="none")
     
-    plot(heatMap)
+#     plot(heatMap)
     
   }
   
-  # if(return.heatMap){return(heatMap$data[,2:3])}
-  if(return.heatMap){return(heatMap)}
+  
+  if(return.heatMap){
+    
+    return(heatMap)
+    
+  }else{
+    
+    plot(heatMap)
+  }
+
+}
+
+# Multiple plot function
+#
+# ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
+# - cols:   Number of columns in layout
+# - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#
+# If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
+# then plot 1 will go in the upper left, 2 will go in the upper right, and
+# 3 will go all the way across the bottom.
+#
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+  
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+  
+  numPlots = length(plots)
+  
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                     ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+  
+  if (numPlots==1) {
+    print(plots[[1]])
+    
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+    
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+      
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
 }

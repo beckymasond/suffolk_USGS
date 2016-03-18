@@ -3,7 +3,7 @@ Author: Joe Tuccillo
 
 Description: 
 
-  Cluster Analysis and Diagnostics.
+  Geodemographic Cluster Analysis and Diagnostics.
 
   1. Generates a block-group level cluster solution for Suffolk County, NY
   using prepared ACS and NLCD Data (see 'data_prep.R'). Workflow:
@@ -15,11 +15,11 @@ Description:
        algorithm, with optimized group selection, using principal component
        scores as inputs.
 
-  2. Produces maps and average profile plots of each cluster group. 
+  2. Produces maps and average profile plots of each cluster group, in the
+      subdirectory 'results/geodemo'. 
 
-  3. Identifies the composition of block groups by cluster type for: 
-    a) The cat 1-4 Hazard Zone. 
-    b) Exposed Suffolk County communities.
+  3. Identifies the composition of block groups by cluster type for exposed Suffolk County
+      communities, in the subdirectory 'results/geodemo'. 
 
 Inputs: 
 
@@ -58,8 +58,7 @@ Outputs:
 source("support_functions.R",echo=F)
 
 ##Generate and load input data
-# source("data_prep.R")
-source("data_prep2.R")
+source("data_prep.R")
 load("data/Suffolk_USGS_Inputs.RData")
 
 ##Load blockgroups
@@ -108,22 +107,36 @@ sufClust<-data.frame(GEOID=inVars.z$GEOID,
 
 ####Visualization and Diagnostics####
 
+#Create results directory if none exists
+if(!"results" %in% list.files()){
+  
+  dir.create("results") 
+  
+}
+if(!"geodemo" %in% list.files("results")){
+  
+  dir.create("results/geodemo") 
+  
+}
+
+
+
+
 ###Plot map of cluster results
 overview.map<-plotMap(bgs,sufClust,custom.colors=brewer.pal(12,"Set3"),
         map.title=paste0("Suffolk County Cluster Solution, k=",max(unique(sufClust$cluster))),
         return.map=T)
-overview.map
-
-# ###Cluster results in the hazard zone
-#TO DO!! - something is funky with the hazard zone geometry - it isn't playing nicely with blockgroups.
-# haz.map<-overview.map<-plotMap(bgs[(!is.na((bgs %over% hazzn)$GEOID),],sufClust,custom.colors=brewer.pal(12,"Set3"),
-#                                map.title="Groups in the Hazard Zone",return.map=T)
-# multiplot(overview.map,haz.map)
+pdf("results/geodemo/geodemo_map.pdf",width=12,height=12)
+plot(overview.map)
+dev.off()
 
 
 ###Average Profile Heatmap
 sufProfile<-merge(sufClust,inVars.prop)
-plotHeat(sufProfile)
+spheat<-plotHeat(sufProfile,return.heatMap = T)
+pdf("results/geodemo/geodemo_profile.pdf",width=16,height=12)
+plot(spheat)
+dev.off()
 
 ###Cluster Groups by Community
 
@@ -145,6 +158,12 @@ bgs.in.muni<-merge(merge(totalPops,bgs.in.muni,by="GEOID"),sufClust,by="GEOID")
 clustPops<-with(bgs.in.muni,aggregate(TOTAL~NAME10+cluster,FUN=sum))
 muniPops<-with(bgs.in.muni,aggregate(TOTAL~NAME10,FUN=sum))
 
+
+#Generate output report
+#for capturing console output (i.e. excluded variables)
+#for recording top-ranked variables by cluster
+sink(paste0("results/geodemo/REPORT_geodemo.txt"),append=F,type="output")  
+
 ##Readout of cluster percentages 
 for (m in 1:nrow(muniPops)){
   
@@ -165,3 +184,5 @@ for (m in 1:nrow(muniPops)){
   cat(sep="\n\n")
   
 }
+
+closeAllConnections()
